@@ -51,14 +51,14 @@ let data = JSON.parse(req.body.form);
 });
 Routes.get("/",(req,res)=>{
     Services.find({},(err , respound)=>{
-    respound.map(m=>m.images="http://localhost:8080/images/Services/"+m.images )
+    respound.map(m=>m.images="https://newbackend-deepspatidar6.onrender.com/images/Services/"+m.images )
         res.send(respound);
 })});
 
 Routes.get("/:id",(req,res)=>{
     let ids = req.params.id;
     Services.findById({_id : ids},(err , respound2)=>{
-        respound2.images = "http://localhost:8080/images/Services/"+respound2.images
+        respound2.images = "https://newbackend-deepspatidar6.onrender.com/images/Services/"+respound2.images
         
         res.send(respound2)
 })});
