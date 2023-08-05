@@ -43,14 +43,14 @@ res.send({
 });
 Routes.get("/",(req,res)=>{
   Category.find({},(err,result)=>{
-    result.map(c => c.image="http://localhost:8080/images/servicescategory/"+c.image)
+    result.map(c => c.image="https://newbackend-deepspatidar6.onrender.com/images/servicescategory/"+c.image)
         res.send(result);
     });
 });
 Routes.get("/:id",(req,res)=>{
     let id = req.params.id;
     Category.findById({_id : id},(err,result2)=>{
-       result2,image = "http://localhost:8080/images/servicescategory/"+result2.image
+       result2,image = "https://newbackend-deepspatidar6.onrender.com/images/servicescategory/"+result2.image
         res,send(result2);
     });
 });
